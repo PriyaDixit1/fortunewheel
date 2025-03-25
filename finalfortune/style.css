@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeW8wYzhzdjVscTZuNnFhbXk5ZjhoaGttbHg4amNwanVzdDc2aXRpZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/CrtMTLIwqtOtaPVRuL/giphy.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-family: sans-serif;
+
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#wheelOfFortune {
+  display: inline-block;
+  position: relative;
+  overflow: visible; /* Changed from hidden to visible to show judge names outside the wheel */
+  width: 600px;
+  height: 600px;
+}
+
+#wheel {
+  display: block;
+}
+
+#spin {
+  font: 1.5em/0 sans-serif;
+  background-image: url("./PQP.jpeg") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  height: 30%;
+  margin: -15%;
+  background: #fff;
+  color: #fff;
+  box-shadow: 0 0 0 8px currentColor, 0 0px 15px 5px rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  transition: 0.8s;
+}
+
+#spin::after {
+  content: '';
+  position: absolute;
+  top: -17px;
+  border: 10px solid transparent;
+  border-bottom-color: currentColor;
+  border-top: none;
+}
+
+/* Judge name styling */
+.judge-name {
+  transition: all 0.3s ease;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#winnerDisplay {
+  margin-top: 20px;
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  display: none;
+  min-width: 300px;
+}
